@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/ver-estudantes', 'EstudanteController@ver');
+Route::get('/add-estudante', function(){return view('add-estudante');});
+Route::post('/upload-pp', 'EstudanteController@upload_pp');
+Route::post('/salvar-estudante', 'EstudanteController@store');
+Route::get('/editar-estudante/{id}', 'EstudanteController@editar');
+Route::post('/atualizar-estudante', 'EstudanteController@atualizar');
+Route::get('/deletar-estudante/{id}', 'EstudanteController@deletar');
